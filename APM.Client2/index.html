@@ -30,6 +30,8 @@
     <script src="common/services/common.services.js"></script>
     <script src="common/services/productResource.js"></script>
     <script src="common/services/productResourceMock.js"></script>
+    <script src="common/services/placeResource.js"></script>
+    <script src="common/services/placeResourceMock.js"></script>
 
     <!-- Product Controllers -->
     <script src="app/products/productListCtrl.js"></script>
@@ -39,6 +41,9 @@
 
     <!-- Price Controllers -->
     <script src="app/prices/priceAnalyticsCtrl.js"></script>
+
+    <!-- Place Controllers -->
+    <script src="app/places/placeListCtrl.js"></script>
    
 </head>
 
@@ -61,6 +66,7 @@
                 <ul class="nav navbar-nav">
                     <li><a ui-sref="productList">Product List</a></li>
                     <li><a ui-sref="productEdit.info({productId:0})"><i class="glyphicon glyphicon-plus"></i>Add Product</a></li>
+                    <li><a ui-sref="placeList">Placement List</a></li>
                     <li><a ui-sref="priceAnalytics">Price Analytics</a></li>
                 </ul>
             </div>

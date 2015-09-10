@@ -50,7 +50,7 @@
                 });
             }
             else {
-                alert('mierda');
+                toastr.error("mierda");
             }
         }
 

@@ -1,0 +1,30 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">Placement List</div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td><button class="btn btn-primary" ng-click="vm.toggleImage()" type="button">{{vm.showImage ? "Hide": "Show"}} Image</button></td>
+                    <td>Name</td>
+                    <td>Location</td>
+                    <td>PremiumSite</td>
+                    <td>Price</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="placement in vm.placements">
+                    <td>
+                        <img ng-if="vm.showImage" ng-src="{{placement.imageUrl}}"
+                             title="{{placement.name}}"
+                             style="width:50px;margin:2px" />
+                    </td>
+                    <td><a ui-sref="productDetail({productId: product.productId})">{{placement.name}}</a></td>
+                    <td>{{placement.location}}</td>
+                    <td><input type="checkbox" ng-checked="{{placement.isPremiumSite}}" disabled/> </td>
+                    <td>{{placement.price | currency}}</td>
+                    <td><a class="btn btn-primary" ui-sref="productEdit.info({productId: placement.productId})">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

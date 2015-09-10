@@ -8,7 +8,8 @@
                              "ui.bootstrap",
                              "ngMessages",
                              "angularCharts",
-                            "productResourceMock"
+                            "productResourceMock",
+                            "placeResourceMock"
                             ]);
     app.config(function ($provide) {
         $provide.decorator("$exceptionHandler",
@@ -81,7 +82,7 @@
                     productResource: "productResource",
                     products: function (productResource) {
                         return productResource.query(
-                            function (response) { alert('aca');},
+                            function (response) { },
                             function (response) {
                                 if (response.status == 404) {
                                     alert("Error accessing resource: " +
@@ -93,6 +94,11 @@
                             function (statusNotification) { alert("Got notification"); }).$promise;
                     }
                 }
+            })
+            .state("placeList", {
+                url: "/places",
+                templateUrl: "app/places/placeListView.html",
+                controller: "PlaceListCtrl as vm"
             })
         }]
 
